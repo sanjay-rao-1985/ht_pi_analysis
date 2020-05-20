@@ -6,6 +6,7 @@ view: looker_sql {
     sql: ${TABLE}.SQL_ID ;;
   }
 
+
   dimension: sql_text {
     type: string
     sql: ${TABLE}.SQL_TEXT ;;
