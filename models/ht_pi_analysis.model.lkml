@@ -30,7 +30,7 @@ explore: revenue {
 }
 
 explore: quote_explore {
-  label: "Quote"
+  label: "Quotes"
   from:  quote
   view_label: "Quote"
   view_name: quote
