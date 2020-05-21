@@ -148,7 +148,7 @@ view: revenue {
   measure: total_netrevenue {
     type: sum
     label: "Total Net Revenue"
-    value_format_name: decimal_2
+    value_format_name: decimal_0
     sql: ${netrevenue} ;;
   }
 
