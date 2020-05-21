@@ -167,14 +167,14 @@ view: revenue {
 
   measure: volume_compliance {
     type: number
-    label: "Volume % Compliance"
+    label: "Vol Compliance %"
     value_format_name: percent_0
     sql: ${total_qty}/${quote.total_quantity} ;;
   }
 
   measure: revenue_compliance {
     type: number
-    label: "Revenue % Compliance"
+    label: "Revenue Compliance %"
     value_format_name: percent_0
     sql: ${total_netrevenue}/(${quote.avg_price} * ${quote.total_quantity}) ;;
   }
