@@ -10,25 +10,6 @@ datagroup: ht_pi_analysis_default_datagroup {
 
 persist_with: ht_pi_analysis_default_datagroup
 
-explore: customer {
-  hidden: yes
-}
-
-explore: product {
-  hidden: yes
-
-}
-
-explore: quote {
-  hidden: yes
-
-}
-
-explore: revenue {
-  hidden: yes
-
-}
-
 explore: quote_explore {
   label: "Quotes"
   from:  quote

@@ -165,4 +165,11 @@ view: revenue {
     sql: ${resaleprice} ;;
   }
 
+  measure: volume_compliance {
+    type: number
+    label: "Volume % Compliance"
+    value_format_name: percent_0
+    sql: ${total_qty}/${quote.total_quantity} ;;
+  }
+
 }

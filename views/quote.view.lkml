@@ -29,13 +29,23 @@ view: quote {
   }
 
   dimension: quantity__c {
+    label: "Quantity dimension"
     type: number
     sql: ${TABLE}.QUANTITY__C ;;
   }
 
   dimension: quote {
     type: string
+    drill_fields: [part_set*, customer_set*]
     sql: ${TABLE}.QUOTE ;;
+  }
+
+  set:  part_set {
+    fields: [part, quantity__c, product.family]
+  }
+
+  set:  customer_set {
+    fields: [customer, quantity__c]
   }
 
   dimension_group: quote_effective_date__c {
@@ -104,6 +114,8 @@ view: quote {
   measure: avg_price {
     type: average
     label: "Avg Price"
+    drill_fields: [part_set*, customer_set*]
+
     value_format_name: decimal_4
     sql: ${price__c} ;;
   }
