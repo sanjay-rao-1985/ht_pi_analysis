@@ -146,7 +146,7 @@ view: quote {
   measure:avg_distributor_margin {
     type: average
     label: "Quote Avg Dist Margin"
-    value_format_name: decimal_0
+    value_format: "0.00\%"
     sql: ${distimargin} ;;
 
   }
