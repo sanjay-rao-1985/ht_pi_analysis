@@ -108,6 +108,43 @@ view: revenue {
    # html: {{ customer }}   {{rendered_value}} ;;
   }
 
+  measure: avg_netprice_min {
+    type: min
+    label: "Net Price Min"
+    value_format_name: decimal_4
+    sql: ${TABLE}.NETPRICE ;;
+    }
+
+  measure: avg_netprice_25th {
+    type: percentile
+    percentile:  25
+    label: "Net Price 25th Percentile"
+    value_format_name: decimal_4
+    sql: ${TABLE}.NETPRICE ;;
+    }
+
+  measure: avg_netprice_median {
+    type: median
+    label: "Net Price Median"
+    value_format_name: decimal_4
+    sql: ${TABLE}.NETPRICE ;;
+    }
+
+  measure: avg_netprice_75th {
+    type: percentile
+    percentile:  75
+    label: "Net Price 75th Percentile"
+    value_format_name: decimal_4
+    sql: ${TABLE}.NETPRICE ;;
+    }
+
+  measure: avg_netprice_max {
+    type: max
+    label: "Net Price Max"
+    value_format_name: decimal_4
+    sql: ${TABLE}.NETPRICE ;;
+    }
+
   measure: total_netrevenue {
     type: sum
     label: "Total Net Revenue"
