@@ -58,6 +58,7 @@ view: revenue {
 
   dimension: resaleprice {
     type: number
+    label: "Invoice Resale Price"
     sql: ${TABLE}.RESALEPRICE ;;
   }
 
@@ -73,6 +74,7 @@ view: revenue {
 
   dimension: shiptoendcustterritory {
     type: string
+    label: "End Cust Territory"
     sql: ${TABLE}.SHIPTOENDCUSTTERRITORY ;;
   }
 
@@ -99,14 +101,17 @@ view: revenue {
 
   measure: avg_netprice {
     type: average
+    label: "Avg Net Price"
     drill_fields: [quote, quoteline, customer, part]
-    value_format_name: decimal_2
+    value_format_name: decimal_4
     sql: ${netprice} ;;
    # html: {{ customer }}   {{rendered_value}} ;;
   }
 
   measure: total_netrevenue {
     type: sum
+    label: "Total Net Revenue"
+    value_format_name: decimal_2
     sql: ${netrevenue} ;;
   }
 
@@ -118,6 +123,8 @@ view: revenue {
 
   measure: avg_resaleprice {
     type: average
+    label: "Avg Resale Price"
+    value_format_name: decimal_4
     sql: ${resaleprice} ;;
   }
 

@@ -8,11 +8,13 @@ view: quote {
 
   dimension: distimargin {
     type: number
+    label: "Disti Margin"
     sql: ${TABLE}.DISTIMARGIN ;;
   }
 
   dimension: distributor_cost__c {
     type: number
+    label: "Disti Cost"
     sql: ${TABLE}.DISTRIBUTOR_COST__C ;;
   }
 
@@ -79,6 +81,7 @@ view: quote {
 
   dimension: resale_price__c {
     type: number
+    label: "Quote Resale Price"
     sql: ${TABLE}.RESALE_PRICE__C ;;
   }
 
@@ -89,6 +92,7 @@ view: quote {
 
   dimension: soldto {
     type: string
+    label: "Sold To"
     sql: ${TABLE}.SOLDTO ;;
   }
 
@@ -99,6 +103,8 @@ view: quote {
 
   measure: avg_price {
     type: average
+    label: "Avg Price"
+    value_format_name: decimal_4
     sql: ${price__c} ;;
   }
 
@@ -109,17 +115,32 @@ view: quote {
 
   measure: avg_resale_price {
     type: average
+    value_format_name: decimal_4
     sql: ${resale_price__c} ;;
   }
 
-  measure: sum_distimargin {
+  measure: total_expected_revenue {
     type: sum
-    sql: ${distimargin} ;;
+    sql: ${quantity__c} * ${price__c} ;;
   }
 
   measure:avg_distributor_cost {
     type: average
+    label: "Quote Avg Dist Cost"
+    value_format_name: decimal_4
     sql: ${distributor_cost__c} ;;
+
+  }
+  measure:avg_distributor_margin {
+    type: average
+    label: "Quote Avg Dist Margin"
+    value_format_name: decimal_4
+    sql: ${distimargin} ;;
+
+  }
+  measure: total_resale_price {
+    type: sum
+    sql: ${resale_price__c} ;;
   }
 
 }
